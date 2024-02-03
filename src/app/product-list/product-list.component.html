@@ -1,0 +1,9 @@
+<div *ngFor="let product of productsList" [class.outOfStock]="product.outOfStock">
+    <h1 (click)="this.showDetails(product)">
+        {{product.name}}
+    </h1>
+    <hr>
+</div>
+<!-- <app-product-details [product]="this.selectedProductToShow"></app-product-details> -->
+<button (click)="showAddForm()">add product to list</button>
+<app-add-product *ngIf="this.isShowAddForm"></app-add-product>

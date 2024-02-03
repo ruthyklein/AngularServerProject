@@ -1,0 +1,15 @@
+<ng-container *ngIf="product">
+    <div *ngIf="!product.outOfStock; else noToProvider">
+        <h1>{{product.name}}</h1>
+        <h3>the id of this product is: {{product.id}}</h3>
+        <h3>the price of this product is: {{product.price}}</h3>
+        <h3>the outOfStock  is: {{product.outOfStock}}</h3>
+
+    </div>
+
+    <ng-template #noToProvider>
+        <div style="color: red;">
+            this product is out of stock
+        </div>
+    </ng-template>
+</ng-container>

@@ -1,0 +1,35 @@
+<form [formGroup]="this.addForm">
+    <div>
+        <label>id</label>
+        <input type="text" formControlName="id">
+        <ng-container *ngIf="this.addForm.controls['id'].errors as idError">
+            <p *ngIf="idError['required']">this field is must!</p>
+            <p *ngIf="idError['minlength']">this field is must at least 9 digits</p>
+        </ng-container>
+    </div>
+    <br>
+    <div>
+        <label>name</label>
+        <input type="text" formControlName="name">
+        <ng-container *ngIf="this.addForm.controls['name'].errors as nameError">
+            <p *ngIf="nameError['required']">this field is must!</p>
+            <p *ngIf="nameError['minlength']">this field is must at least 3 digits</p>
+        </ng-container>
+    </div>
+    <div>
+        <br>
+        <label>price</label>
+        <input type="text" formControlName="price">
+        <ng-container *ngIf="this.addForm.controls['price'].errors as priceError">
+            <p *ngIf="priceError['required']">this field is must!</p>
+        </ng-container>
+    </div>
+    <!-- <div>
+        <label>is product out of stock?</label>
+        <select formControlName="outOfStock">
+            <option [value]=true>yes</option>
+            <option [value]=false>no</option>
+        </select>
+    </div> -->
+    <button (click)="save()" [disabled]="!this.addForm.valid">save</button>
+</form>
