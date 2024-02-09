@@ -17,7 +17,7 @@ export class AddProductComponent implements OnInit{
   constructor(private _productService: ProductService) { }
   ngOnInit(): void {
     this.addForm = new FormGroup({
-      "id": new FormControl(0, [Validators.required, Validators.minLength(9)]),
+      "id": new FormControl(0,[Validators.required, Validators.minLength(9)]),
       "name": new FormControl("", [Validators.required, Validators.minLength(3)]),
       "price": new FormControl(0, [Validators.required]),
       "outOfStock": new FormControl(true)
